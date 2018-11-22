@@ -1,0 +1,58 @@
+<!-- Carrer Development Table -->
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="card-title xyz">Career Development Plan</h5>
+      </div>
+      <div class="col-md-6">
+        <div class="float-right">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cdp-modal">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="mat-elevation-z8">
+    <mat-table [dataSource]="dataSource" matSort>
+
+      <!-- column 1 start -->
+      <ng-container matColumnDef="plans">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Development Plans </mat-header-cell>
+        <mat-cell *matCellDef="let cdp"> {{cdp.plans}} </mat-cell>
+      </ng-container>
+      <!-- column 1 end -->
+
+      <!-- column 2 start -->
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+        <mat-cell *matCellDef="let cdp"> {{cdp.status}}</mat-cell>
+      </ng-container>
+      <!-- column 2 end -->
+
+      <!-- column 3 start -->
+      <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Edit </mat-header-cell>
+        <mat-cell *matCellDef="let cdp">
+          <span class=" material-icons pointer" style="color:blue" data-toggle="modal" data-target="#cdp-modal">edit</span></mat-cell>
+      </ng-container>
+      <!-- column 3 end -->
+
+      <!-- column 4 start -->
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Delete </mat-header-cell>
+        <mat-cell *matCellDef="let cdp">
+          <span class=" material-icons pointer" style="color:#dc3545" data-toggle="modal" data-target="#delete-cdp-modal">delete_forever</span></mat-cell>
+        </ng-container>
+      <!-- column 4 end -->
+     
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <!-- pagination start -->
+    <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]"></mat-paginator>
+    <!-- pagination end -->
+  </div>
+</div>

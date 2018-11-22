@@ -1,0 +1,45 @@
+<div class="tabtable">
+  <section class="content">
+
+
+    <div class="container-fluid">
+
+      <!-- tab heading start -->
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active tabs-font-color" id="tab1" data-toggle="tab" href="#tab1_content" aria-controls="tab1"
+            aria-selected="true">Add Interview Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link tabs-font-color" id="tab2" data-toggle="tab" href="#tab2_content" aria-controls="tab2"
+            aria-selected="false">Add Interview Panel Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link tabs-font-color" id="tab3" data-toggle="tab" href="#tab3_content" aria-controls="tab3"
+            aria-selected="false">View Interview Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link tabs-font-color" id="tab4" data-toggle="tab" href="#tab4_content" aria-controls="tab4"
+            aria-selected="false">View Interview Panel Details</a>
+        </li>
+      </ul>
+      <!-- tab heading end -->
+
+      <!-- tab content start -->
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="tab1_content" aria-labelledby="tab1_content">
+         <app-add-interview-history></app-add-interview-history>
+        </div>
+        <div class="tab-pane fade" id="tab2_content" aria-labelledby="tab2_content">
+         <app-add-interview-panel></app-add-interview-panel>
+        </div>
+        <div class="tab-pane fade" id="tab3_content" aria-labelledby="tab3_content">
+         <app-view-interview-history></app-view-interview-history>
+        </div>
+        <div class="tab-pane fade" id="tab4_content" aria-labelledby="tab4_content">
+        </div>
+      </div>
+      <!-- tab content end -->
+    </div>
+  </section>
+</div>
