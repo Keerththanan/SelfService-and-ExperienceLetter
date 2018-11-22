@@ -23,8 +23,6 @@ import { SelectInterviewSelectionComponent } from './interview-selection/modal/s
 import { RejectInterviewSelectionComponent } from './interview-selection/modal/reject-interview-selection/reject-interview-selection.component';
 import { AddInterviewPanelComponent } from './interview-history/add-interview-panel/add-interview-panel.component';
 import { ViewInterviewHistoryComponent } from './interview-history/view-interview-history/view-interview-history.component';
-import { ViewInterviewHistoryInternalExternalComponent } from './interview-history/view-interview-history/modal/view-interview-history-internal-external/view-interview-history-internal-external.component';
-import { ViewInterviewHistorySelectedRejectedComponent } from './interview-history/view-interview-history/modal/view-interview-history-selected-rejected/view-interview-history-selected-rejected.component';
 import { ViewInterviewPanelComponent } from './interview-history/view-interview-panel/view-interview-panel.component';
 
 const routes:Routes=[
@@ -58,8 +56,6 @@ const routes:Routes=[
      RejectInterviewSelectionComponent,
      AddInterviewPanelComponent,
      ViewInterviewHistoryComponent,
-     ViewInterviewHistoryInternalExternalComponent,
-     ViewInterviewHistorySelectedRejectedComponent,
      ViewInterviewPanelComponent
 
     ]
