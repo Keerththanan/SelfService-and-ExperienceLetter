@@ -33,7 +33,8 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Type</label>
-                          <select class="form-control select2">
+                          <select class="form-control select2" [(ngModel)]="selfServiceObj.selfServiceId" name="selfServiceId">
+                            <option selected disabled>Select a type</option>
                             <option>Complain</option>
                             <option>Feedback</option>
                             <option>Request</option>
@@ -57,7 +58,8 @@
 
                         <div class="form-group">
                           <label for="exampleInputEmail1">Description</label>
-                          <textarea class="form-control" rows="3" cols="10" [(ngModel)]="selfServiceObj.description" name="description"></textarea>
+                          <textarea class="form-control" rows="3" cols="10" [(ngModel)]="selfServiceObj.description"
+                            name="description"></textarea>
                         </div>
                       </div>
 
@@ -79,7 +81,8 @@
 
                         <div class="form-group">
                           <label for="exampleInputEmail1">Individual Involved </label>
-                          <input type="Number of copies " class="form-control" placeholder="Individual name" [(ngModel)]="selfServiceObj.relevantIndividual" name="relevantIndividual ">
+                          <input type="Number of copies " class="form-control" placeholder="Individual name"
+                            [(ngModel)]="selfServiceObj.relevantIndividual" name="relevantIndividual ">
                         </div>
                       </div>
                     </div>
