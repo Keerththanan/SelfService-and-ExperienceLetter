@@ -1,0 +1,125 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+
+      <!-- card header start -->
+      <div class="card-header">
+        <h5 class="card-title">Add Interview History</h5>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <!-- card-header end -->
+
+      <!-- card body start -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+
+              <!-- form start -->
+              <form [formGroup]="interviewHistory">
+
+                <!-- card body start -->
+                <div class="card-body">
+                  <fieldset>
+                    <legend>Add Interview Details</legend>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="name">Job Title</label>
+                          <select class="form-control" formControlName="jobTitle" name="jobTitle">
+                            <option>QA</option>
+                            <option>Software Developer</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="name">Job Reference Number</label>
+                          <input type="text" class="form-control" formControlName="jobTitleId" name="jobTitleId"
+                            readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Editable table -->
+                    <div class="card">
+
+                      <div class="card-body">
+                        <div id="table" class="table-editable">
+                          <span class="table-add float-right mb-3 mr-2">
+                            <a class="text-success" (click)="addData()">
+                              <!-- <span icon="plus" size="2x"></span> -->
+                              <span class="material-icons pointer">add</span>
+                            </a>
+                          </span>
+
+                          {{interviewHistory.value | json}}
+                          <table class="table table-bordered table-responsive-md table-striped text-center">
+                            <tr>
+                              <th class="text-center">Applicant Name</th>
+                              <th class="text-center">Internal/External</th>
+                              <th class="text-center">Selected/Rejected</th>
+                              <th class="text-center">Reason</th>
+                              <th class="text-center">Remove</th>
+                            </tr>
+                            <tr formArrayName="datas" *ngFor="let data of interviewHistory.get('datas').controls; let id = index">
+                              <ng-container [formGroupName]="id">
+                                <td><input type="text" class="form-control" formControlName="applicantsName" name="applicantsName"
+                                    placeholder="Enter Applicant Name"></td>
+                                <td><select class="form-control" formControlName="candidateType" name="candidateType">
+                                    <option>Internal</option>
+                                    <option>External</option>
+                                  </select></td>
+                                <td><select class="form-control" formControlName="selectedStatus" name="selectedStatus">
+                                    <option>Selected</option>
+                                    <option>Rejected</option>
+                                  </select></td>
+                                <td><textarea class="form-control" formControlName="reason" name="reason" placeholder="Enter Reject Reason"></textarea></td>
+
+                                <td>
+                                  <span class="table-remove">
+                                    <a class="my-0" (click)="removeData(id)"><span class="material-icons btn-danger pointer">remove</span></a>
+                                  </span>
+                                </td>
+                              </ng-container>
+                            </tr>
+                          </table>
+
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Editable table -->
+                  </fieldset>
+                  &nbsp;
+
+                </div>
+                <!-- card body end -->
+
+                <div class="card-footer">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal"
+                    data-target="#addapplicantmodal">ADD</button>
+
+                  &nbsp;
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Reset</button>
+                </div>
+              </form>
+              <!-- form end -->
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- card body end -->
+
+    </div>
+  </div>
+</div>

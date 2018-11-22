@@ -1,0 +1,118 @@
+<!-- request leave start -->
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+
+      <!-- card header start -->
+      <div class="card-header">
+        <h5 class="card-title">Create Welfare Event</h5>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <!-- card-header end -->
+
+      <!-- card body start -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+
+              <!-- form start -->
+              <form role="form">
+
+                <!-- card body start -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="leave-days"> Name of the event</label>
+                        <select class="form-control">
+                          <option>Cricket</option>
+                          <option> Foot ball</option>
+                        </select>
+
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="budget-for-the-event"> Budget for the event</label>
+                        <input type="email" class="form-control" id="start-date" placeholder="Enter budget for the event">
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="cost-of-the-event">Cost of the event</label>
+                        <input type="text" class="form-control" name="event-cost" id="event-cost" placeholder="Enter cost of the event">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <div class="mat-radio-button">
+                          <mat-radio-group>
+                            <label for="send notification to employee">Send notification to employee:</label><br>
+                            <mat-radio-button value="1"> yes</mat-radio-button>
+                            <mat-radio-button value="2">No</mat-radio-button>
+                          </mat-radio-group>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="promotion-employee-date promoted">Date Promoted</label>
+                        <input type="text" mwlFlatpickr class="form-control" name="date-promoted" id="date-promoted"
+                          placeholder="YYYY/MM/DD">
+                      </div>
+                    </div>
+                    <div>
+
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <mat-radio-group>
+                          <label for="directors-approval">Director's Approval:</label><br>
+                          <mat-radio-button value="1"> Approve</mat-radio-button>
+                          <mat-radio-button value="2">Reject</mat-radio-button>
+                        </mat-radio-group>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="beneficiaries">Beneficiaries:</label>
+                        <textarea class="form-control" placeholder=" Enter Beneficiaries"></textarea>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+                <!-- card body end -->
+
+                <div class="card-footer">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">Add</button>
+                  &nbsp;
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Reset</button>
+                </div>
+              </form>
+              <!-- form end -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- card body end -->
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- request leave end -->

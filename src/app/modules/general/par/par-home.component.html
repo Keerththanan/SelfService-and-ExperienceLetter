@@ -1,0 +1,52 @@
+<div style="height:600px">
+    <h5>HR views</h5>
+    <mat-tab-group>
+        <mat-tab label="Schedule Par for Single User">
+
+            <mat-horizontal-stepper>
+                <mat-step label="Search">
+                    <app-par-filter></app-par-filter>
+                </mat-step>
+                <mat-step label="Enter Par Schedule">
+                    <app-par-schedule-form></app-par-schedule-form>
+                </mat-step>
+                <mat-step label="Par Configurations">
+                    <app-par-config></app-par-config>
+                </mat-step>
+            </mat-horizontal-stepper>
+
+        </mat-tab>
+
+        <mat-tab label="Schedule Par for Multiple User">
+            <mat-horizontal-stepper>
+                <mat-step label="Search">
+                    <app-par-filter-table></app-par-filter-table>
+                </mat-step>
+                <mat-step label="Enter Par Schedule">
+                    <app-par-schedule-form></app-par-schedule-form>
+                </mat-step>
+                <mat-step label="Par Configurations">
+                    <app-par-config></app-par-config>
+                </mat-step>
+            </mat-horizontal-stepper>
+
+        </mat-tab>
+        <mat-tab label="Enter Par Review OutComes">
+            Par review outcomes goes here </mat-tab>
+
+        <mat-tab label="Configure Par Details">
+            <app-par-config-table></app-par-config-table>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
+
+
+
+<div style="height:600px;">
+    <h5>Employee /Trainee views par</h5>
+    <app-par-template></app-par-template>
+
+    <app-par-history></app-par-history>
+    <app-track-par></app-track-par>
+</div>
