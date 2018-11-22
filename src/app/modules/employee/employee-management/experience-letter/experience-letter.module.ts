@@ -23,11 +23,11 @@ const routes: Routes = [
         component: ExpLetterViewHistoryComponent
       },
       {
-        path: 'requestLetter',
+        path: 'generateLetter',
         component: GenerateExperienceLetterComponent
       },
       {
-        path: 'generateLetter',
+        path: 'requestLetter',
         component: RequestExperienceLetterComponent
       },
     ]
