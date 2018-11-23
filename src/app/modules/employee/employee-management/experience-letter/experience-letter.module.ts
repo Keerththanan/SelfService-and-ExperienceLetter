@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ExperienceLetterComponent } from './experience-letter.component';
@@ -38,6 +39,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     MaterialModuleModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [

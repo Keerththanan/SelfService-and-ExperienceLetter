@@ -1,3 +1,5 @@
+import { User } from './../../../../../model/user';
+import { UserService } from './../../../../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GenerateExperienceLetterComponent implements OnInit {
 
-  constructor() { }
+  user: User[];
+  companyName = "SGIC"
+
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.getAllUsers();
+  }
+
+  public getAllUsers() {
+    this.userService.getDepartments().subscribe(data => {
+      this.user = data;
+    })
   }
 
   public printComponentx() {
@@ -19,7 +31,7 @@ export class GenerateExperienceLetterComponent implements OnInit {
     printButton.style.visibility = 'visible';
   }
 
-  public printComponent(){
+  public printComponent() {
     var content = document.getElementById("print-div").innerHTML;
     var mywindow = window.open('', '', 'height=650,width=1200');
 

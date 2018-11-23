@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { ExperienceLetterRequestService } from 'src/app/services/experience-letter-request.service';
 
 @Component({
   selector: 'app-exp-letter-view-history',
@@ -10,21 +11,24 @@ export class ExpLetterViewHistoryComponent implements OnInit {
 
   displayedColumns: string[] = ['requestedDate','reason','status','issuedDate','provided'];
 
+  experienceLetter = [];
 
-  history = [
-    {'requestedDate' :'12/1/2018', 'reason':'leaving', 'status':'jhbj', 'issuedDate':'15/4/14','provided':'Provided'},
-    {'requestedDate' :'1/5/2018', 'reason':'salary demand', 'status':'jhbj', 'issuedDate':'15/4/14','provided':'Provided'}
-  ]
-  dataSource = new MatTableDataSource<any>(this.history);
+  dataSource = new MatTableDataSource<any>(this.experienceLetter);
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private experienceLetterRequestService: ExperienceLetterRequestService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.history);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.getAllExperienceLetter();
+  }
+
+  public getAllExperienceLetter(){
+    this.experienceLetterRequestService.getAllExperienceLetterRequest().subscribe(data=>{
+      this.experienceLetter = data;
+      this.dataSource = new MatTableDataSource<any>(data);
+      console.log(data);
+    })
   }
 
   applyFilter(filterValue: string) {

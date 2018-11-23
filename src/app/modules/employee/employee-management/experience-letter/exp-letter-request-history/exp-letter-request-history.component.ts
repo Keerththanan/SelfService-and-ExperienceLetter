@@ -1,5 +1,7 @@
+import { ExperienceLetterService } from 'src/app/services/experience-letter.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { ExperienceLetter } from 'src/app/model/experience-letter';
 
 @Component({
   selector: 'app-exp-letter-request-history',
@@ -8,23 +10,26 @@ import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 })
 export class ExpLetterRequestHistoryComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'empName','department','requestedDate','reason','status','issuedDate','provided'];
+  experienceLetter: ExperienceLetter[];
 
-  history = [
-    { 'id':'1', 'empName':'Manager', 'department':'HR', 'requestedDate' :'12/1/2018', 'reason':'leaving', 'status':'jhbj', 'issuedDate':'15/414','provided':'Provided'},
-    { 'id':'2', 'empName':'Manager', 'department':'HR', 'requestedDate' :'1/5/2018', 'reason':'salary demand', 'status':'jhbj', 'issuedDate':'15414','provided':'Provided'}
- 
-  ]
-  dataSource = new MatTableDataSource<any>(this.history);
+  displayedColumns: string[] = ['id','empName','department','requestedDate','status','issueDate','letterProcess'];
+
+  dataSource = new MatTableDataSource<any>(this.experienceLetter);
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private experienceLetterService: ExperienceLetterService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.history);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.getAllExperienceLetter();
+  }
+
+  public getAllExperienceLetter(){
+    this.experienceLetterService.getAllExperienceLetter().subscribe(data=>{
+      this.experienceLetter = data;
+      this.dataSource = new MatTableDataSource<any>(data);
+      console.log(data);
+    })
   }
 
   applyFilter(filterValue: string) {
@@ -34,4 +39,5 @@ export class ExpLetterRequestHistoryComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
 }
