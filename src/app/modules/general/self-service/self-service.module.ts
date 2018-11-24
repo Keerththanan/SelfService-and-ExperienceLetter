@@ -14,6 +14,9 @@ import { AcceptRequestComponent } from './view-individuals-complains/modal/accep
 import { AddReplyComponent } from './view-individuals-complains-history/modal/add-reply/add-reply.component';
 import { AddResponseComponent } from './view-response/modal/add-response/add-response.component';
 import { FormsModule } from '@angular/forms';
+import { SelfServiceTypeComponent } from './self-service-type/self-service-type.component';
+import { EditTypeComponent } from './self-service-type/model/edit-type/edit-type.component';
+import { DeletTypeComponent } from './self-service-type/model/delet-type/delet-type.component';
 
 const routes:Routes=[
   {
@@ -40,6 +43,10 @@ const routes:Routes=[
       path: 'viewResponse',
       component: ViewResponseComponent
     },
+    {
+      path: 'selfServiceType',
+      component: SelfServiceTypeComponent
+    },
   ]
   }
 ]
@@ -62,7 +69,11 @@ const routes:Routes=[
     ViewFilesComponent,
     AcceptRequestComponent,
     AddReplyComponent  ,
-    AddResponseComponent  
+    AddResponseComponent,
+    EditTypeComponent,
+    DeletTypeComponent,
+    SelfServiceTypeComponent
+    
   ]
 })
 export class SelfServiceModule { }
